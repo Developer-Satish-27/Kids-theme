@@ -442,3 +442,7 @@ input,textarea{
     display: grid;
     grid-template-columns: 1fr 1fr ;
 }
+@media only screen and (width<=400px){
+.navbar,.imgbox,.imgbox2,.ing1,.img2,.intro,.formbox,.info{ display :flex;
+flex-direction: column;}
+}
