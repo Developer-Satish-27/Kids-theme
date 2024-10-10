@@ -445,5 +445,5 @@ input,textarea{
  @media screen and (max-width:420px) {.navbar,.imgbox,.imgbox2,.img1,.img2,.intro,.formbox,.info,.about{display:grid;
 grid-template-columns: 1fr;
 font-size:20px;
-box-sizing:border-box;}
+}
 }
