@@ -444,5 +444,6 @@ input,textarea{
 }
 @media only screen and (max-width:450px){
 .navbar,.imgbox,.imgbox2,.img1,.img2,.intro,.formbox,.info{ display:flex;
-flex-direction: column;}
+flex-direction: column;
+box-sizing:border-box;}
 }
