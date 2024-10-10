@@ -443,6 +443,6 @@ input,textarea{
     grid-template-columns: 1fr 1fr ;
 }
 @media only screen and (width<=400px){
-.navbar,.imgbox,.imgbox2,.img1,.img2,.intro,.formbox,.info{ 
+.navbar,.imgbox,.imgbox2,.img1,.img2,.intro,.formbox,.info{ display:flex;
 flex-direction: column;}
 }
