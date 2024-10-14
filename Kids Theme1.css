@@ -1,36 +1,47 @@
-/* Reset margins and padding */
+/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Navbar styling */
+/* Navbar */
 .navbar {
-    display: grid;
-    grid-template-columns: 1fr 1fr 4fr 1fr;
-    padding-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 30px;
     background-color: white;
+    position: fixed;
     width: 100%;
     height: 70px;
     z-index: 1000;
-    position: fixed;
+    top: 0;
 }
 
-/* Logo adjustments */
+/* Logo */
 .logo {
-    height: 100px;
-    position: relative;
-    top: -30px;
-    left: 30px;
+    height: 60px;
 }
 
-/* Navigation buttons */
+/* Navigation Menu */
+ul {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+    align-items: center;
+}
+
+ul li {
+    position: relative;
+}
+
 ul li button {
     border: none;
-    background-color: white;
-    text-align: left;
-    padding: 5px;
+    background: none;
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
 }
 
 ul li button:hover {
@@ -38,29 +49,20 @@ ul li button:hover {
     font-weight: bold;
 }
 
-/* Navbar menu list */
-ul {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    list-style: none;
-    text-align: center;
-    gap: 15px;
-}
-
-ul li {
-    cursor: pointer;
-}
-
+/* Dropdown Menu */
 ul li ul.dropdown {
-    background-color: white;
     display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
     border-radius: 10px;
     border: 2px dashed palevioletred;
+    padding: 10px;
 }
 
 ul li:hover ul.dropdown {
     display: block;
-    margin: 5px;
 }
 
 /* Buttons */
@@ -69,6 +71,10 @@ ul li:hover ul.dropdown {
     width: 60px;
     border-radius: 50%;
     font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
 
 #button {
@@ -80,11 +86,6 @@ ul li:hover ul.dropdown {
 #button1 {
     background-color: white;
     border: 5px dashed palevioletred;
-    margin-top: -22px;
-}
-
-#button1:hover, #button:hover {
-    animation: rotate 4s linear infinite;
 }
 
 @keyframes rotate {
@@ -96,140 +97,183 @@ ul li:hover ul.dropdown {
     }
 }
 
+#button1:hover, #button:hover {
+    animation: rotate 4s linear infinite;
+}
+
 /* Image Box */
 .imgbox {
-    background-image: url(kidsbackground.jpg);
-    filter: hue-rotate(50deg);
+    background-image: url('kidsbackground.jpg');
     background-size: cover;
     background-position: center;
     height: 40vh;
     padding: 350px 30px 0 30px;
-    font-size: 20px;
-    font-weight: bold;
     color: black;
 }
 
-.imgbox h1:nth-child(1) {
-    background-color: rgb(255, 157, 190);
-    padding: 5px;
+.imgbox h1 {
     margin: 10px;
+    padding: 10px;
+    font-size: 30px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
     border-radius: 5px;
-    color: white;
-    font-size: 30px;
-}
-
-.imgbox h1:nth-child(2) {
-    background-color: rgb(98, 192, 251);
-    padding: 5px;
-    margin: 10px;
-    border-radius: 10px;
-    color: white;
-    font-size: 30px;
 }
 
 .imgbox button {
+    margin-top: 20px;
     background-color: rgb(255, 200, 0);
     color: white;
+    border: none;
+    border-radius: 50px;
     height: 40px;
     width: 150px;
-    border-radius: 50px;
-    border: none;
     font-size: 20px;
-    font-weight: bold;
+    cursor: pointer;
 }
 
 .imgbox button:hover {
     background-color: rgb(98, 192, 251);
+}
+
+/* Services Section */
+.services {
+    padding: 60px 30px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.services h1 {
+    background-color: rgb(255, 166, 195);
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.services button {
+    margin-top: 20px;
+    background-color: rgb(255, 200, 0);
+    color: white;
+    border-radius: 50px;
+    border: 2px dashed white;
+    height: 40px;
+    font-size: 20px;
+    width: 180px;
+}
+
+/* Form Section */
+.formbox {
+    display: flex;
+    gap: 30px;
+    padding: 50px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.form {
+    background-color: rgb(44, 146, 230);
+    color: white;
+    padding: 30px;
+    border-radius: 20px;
+    border: 2px dashed white;
+    width: 100%;
+    max-width: 400px;
+}
+
+input, textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 18px;
+}
+
+.form button {
+    width: 100%;
+    background-color: rgb(255, 208, 0);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 20px;
+}
+
+/* Contact Section */
+.info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 50px;
+}
+
+.info div {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.location {
+    border: 2px dashed rgb(98, 192, 251);
+}
+
+.contact {
+    border: 2px dashed rgb(255, 166, 195);
+}
+
+.mail {
+    border: 2px dashed rgb(250, 216, 130);
+}
+
+.info div:hover {
+    transform: translateY(-10px);
     cursor: pointer;
 }
 
-/* Grid Adjustments */
-.img1, .img2, .formbox, .info, .about {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-/* Mobile-specific styling */
+/* Media Queries */
 @media screen and (max-width: 768px) {
     .navbar {
-        grid-template-columns: 1fr;
+        flex-direction: column;
         height: auto;
-        padding-top: 20px;
     }
 
     ul {
-        grid-template-columns: 1fr 1fr;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .imgbox {
-        padding: 100px 20px 0 20px;
         height: auto;
-    }
-
-    .img1 img, .img2 img {
-        height: 300px;
-        width: 100%;
+        padding-top: 100px;
     }
 
     .formbox {
         flex-direction: column;
-        align-items: center;
     }
 
     input, textarea {
-        width: 90%;
-    }
-
-    .services button, .imgbox button {
-        width: 100%;
+        font-size: 16px;
     }
 }
 
-/* Extra small screens */
 @media screen and (max-width: 420px) {
-    .navbar, .imgbox, .imgbox2, .intro, .formbox, .info, .about {
-        grid-template-columns: 1fr;
-        font-size: 16px;
+    .navbar {
+        padding: 10px;
     }
 
     .logo {
-        height: 80px;
-        top: -20px;
+        height: 50px;
+    }
+
+    ul {
+        flex-direction: column;
     }
 
     .imgbox h1 {
         font-size: 24px;
     }
 
-    .imgbox button {
-        font-size: 18px;
-        height: 35px;
-    }
-
-    .form {
-        width: 100%;
-        left: 0;
-        padding: 10px;
-    }
-
-    .location, .contact, .mail {
-        height: auto;
-        padding: 20px;
-        margin: 10px 0;
-    }
-
-    input, textarea {
-        font-size: 18px;
-    }
-
-    .img1 img, .img2 img {
-        height: 200px;
-    }
-
-    .services h1:nth-child(1), .services h1:nth-child(4) {
-        height: 10px;
-        line-height: 0px;
+    .info div {
+        font-size: 16px;
     }
 }
