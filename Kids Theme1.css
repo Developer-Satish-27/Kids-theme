@@ -1,0 +1,235 @@
+/* Reset margins and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Navbar styling */
+.navbar {
+    display: grid;
+    grid-template-columns: 1fr 1fr 4fr 1fr;
+    padding-top: 40px;
+    background-color: white;
+    width: 100%;
+    height: 70px;
+    z-index: 1000;
+    position: fixed;
+}
+
+/* Logo adjustments */
+.logo {
+    height: 100px;
+    position: relative;
+    top: -30px;
+    left: 30px;
+}
+
+/* Navigation buttons */
+ul li button {
+    border: none;
+    background-color: white;
+    text-align: left;
+    padding: 5px;
+}
+
+ul li button:hover {
+    color: rgb(250, 216, 130);
+    font-weight: bold;
+}
+
+/* Navbar menu list */
+ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    list-style: none;
+    text-align: center;
+    gap: 15px;
+}
+
+ul li {
+    cursor: pointer;
+}
+
+ul li ul.dropdown {
+    background-color: white;
+    display: none;
+    border-radius: 10px;
+    border: 2px dashed palevioletred;
+}
+
+ul li:hover ul.dropdown {
+    display: block;
+    margin: 5px;
+}
+
+/* Buttons */
+#button, #button1 {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    font-size: 30px;
+}
+
+#button {
+    border: 5px solid white;
+    background-color: rgb(255, 166, 195);
+    color: white;
+}
+
+#button1 {
+    background-color: white;
+    border: 5px dashed palevioletred;
+    margin-top: -22px;
+}
+
+#button1:hover, #button:hover {
+    animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Image Box */
+.imgbox {
+    background-image: url(kidsbackground.jpg);
+    filter: hue-rotate(50deg);
+    background-size: cover;
+    background-position: center;
+    height: 40vh;
+    padding: 350px 30px 0 30px;
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+}
+
+.imgbox h1:nth-child(1) {
+    background-color: rgb(255, 157, 190);
+    padding: 5px;
+    margin: 10px;
+    border-radius: 5px;
+    color: white;
+    font-size: 30px;
+}
+
+.imgbox h1:nth-child(2) {
+    background-color: rgb(98, 192, 251);
+    padding: 5px;
+    margin: 10px;
+    border-radius: 10px;
+    color: white;
+    font-size: 30px;
+}
+
+.imgbox button {
+    background-color: rgb(255, 200, 0);
+    color: white;
+    height: 40px;
+    width: 150px;
+    border-radius: 50px;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.imgbox button:hover {
+    background-color: rgb(98, 192, 251);
+    cursor: pointer;
+}
+
+/* Grid Adjustments */
+.img1, .img2, .formbox, .info, .about {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Mobile-specific styling */
+@media screen and (max-width: 768px) {
+    .navbar {
+        grid-template-columns: 1fr;
+        height: auto;
+        padding-top: 20px;
+    }
+
+    ul {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .imgbox {
+        padding: 100px 20px 0 20px;
+        height: auto;
+    }
+
+    .img1 img, .img2 img {
+        height: 300px;
+        width: 100%;
+    }
+
+    .formbox {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    input, textarea {
+        width: 90%;
+    }
+
+    .services button, .imgbox button {
+        width: 100%;
+    }
+}
+
+/* Extra small screens */
+@media screen and (max-width: 420px) {
+    .navbar, .imgbox, .imgbox2, .intro, .formbox, .info, .about {
+        grid-template-columns: 1fr;
+        font-size: 16px;
+    }
+
+    .logo {
+        height: 80px;
+        top: -20px;
+    }
+
+    .imgbox h1 {
+        font-size: 24px;
+    }
+
+    .imgbox button {
+        font-size: 18px;
+        height: 35px;
+    }
+
+    .form {
+        width: 100%;
+        left: 0;
+        padding: 10px;
+    }
+
+    .location, .contact, .mail {
+        height: auto;
+        padding: 20px;
+        margin: 10px 0;
+    }
+
+    input, textarea {
+        font-size: 18px;
+    }
+
+    .img1 img, .img2 img {
+        height: 200px;
+    }
+
+    .services h1:nth-child(1), .services h1:nth-child(4) {
+        height: 10px;
+        line-height: 0px;
+    }
+}
